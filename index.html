@@ -203,6 +203,7 @@
             date: 'Nov 2024 – May 2025',
             title: 'Line Producer',
             company: 'Mead Productions',
+            companyUrl: 'https://francismead.com/', // Updated URL
             details: [
                 'Served as Line Producer for "Anjali," a UN-sanctioned documentary that evolved into an independent docudrama short film.',
                 'Managed comprehensive daily budget control and cost oversight for a USD 15,000 production with a 12-member team.',
@@ -218,6 +219,7 @@
             date: 'Jun 2023 – Oct 2024',
             title: 'Founder\'s Office (Operations)',
             company: 'CleanDirty Narrative Lab',
+            companyUrl: 'https://cleandirty.ai/desktop', // Updated URL
             details: [
                 'Built the startup from the ground up as founding associate; researched and built pipelines to harness generative AI.',
                 'Scaled the startup to 62,000 Monthly Active Users within the first month of launch (June 2024).',
@@ -232,6 +234,7 @@
             date: 'Oct 2022 – Jun 2023',
             title: 'Founding Associate',
             company: 'Llum.co.in',
+            companyUrl: 'https://llum.co.in/', // Confirmed URL
             details: [
                 'Built and launched the company\'s Shopify website from scratch.',
                 'Developed and implemented a comprehensive sales pipeline on Amazon.co.uk.',
@@ -244,6 +247,7 @@
             date: 'Aug 2020 – Present',
             title: 'Communications, Operations & Design',
             company: 'Every Infant Matters (Part-Time)',
+            companyUrl: 'https://everyinfantmatters.org/', // Confirmed URL
             details: [
                 'Collaborated with the CEO on strategic initiatives, including budget development and grant proposals.',
                 'Managed a large-scale food donation drive, coordinating the distribution of 350kg of fresh food daily for 3 months.',
@@ -256,6 +260,7 @@
             date: 'Jan 2019 – Feb 2020',
             title: 'Head of Sales, Loyalty Card Division',
             company: 'The Suryaa Hotel',
+            companyUrl: 'https://www.thesuryaa.com/', // Confirmed URL
             details: [
                 'Independently marketed and sold loyalty cards, achieving sales of Rs. 7.2 Lacs INR.',
                 'Developed and implemented forward-looking marketing strategies.',
@@ -267,6 +272,7 @@
             date: 'Sep 2015 – Dec 2018',
             title: 'Manager of Comms & Procurement',
             company: 'Operation ASHA',
+            companyUrl: 'https://www.opasha.org/', // Updated URL
             details: [
                 'Developed and executed communication strategies for tuberculosis eradication initiatives.',
                 'Managed content creation for fundraising, donor communications, and public awareness.',
@@ -279,6 +285,7 @@
             date: 'Nov 2009 – Oct 2015',
             title: 'Managing Partner',
             company: 'Crunch Health Clubs',
+            companyUrl: 'https://architizer.com/projects/crunch-gym/', // Updated URL to Architizer project page as a general Crunch Health Clubs site was not found for the specific context.
             details: [
                 'Served as Managing Partner for six years, overseeing operations and strategic direction.',
                 'Created Canvas Cafe, a rooftop restaurant from scratch, offering health food for gym-goers.',
@@ -290,7 +297,7 @@
 
     const highlightsContent = {
         'highlight-1': {
-            icon: ' ',
+            icon: '🎬',
             title: 'Film Production Leadership',
             content: `
                 <p class="mb-4">As Line Producer for "Anjali," a UN-sanctioned documentary that evolved into an independent docudrama, I was responsible for the entire operational backbone of the production. This project required navigating the complexities of filming in India for the first time with a New York-based director.</p>
@@ -355,6 +362,10 @@
                     // Always render as a single column with content to the right of the line
                     const detailsList = item.details.map(detail => `<li class="text-gray-600">${detail}</li>`).join('');
 
+                    const companyHtml = item.companyUrl 
+                        ? `<a href="${item.companyUrl}" target="_blank" class="underline hover:text-[#1A535C]">${item.company}</a>`
+                        : `${item.company}`;
+
                     const timelineElement = `
                         <div class="mb-8 flex items-start w-full">
                             <!-- Dot on the line -->
@@ -365,7 +376,7 @@
                             <div class="bg-white rounded-lg shadow-xl px-6 py-4 timeline-item-header cursor-pointer ml-10 flex-grow">
                                 <p class="text-sm text-gray-500">${item.date}</p>
                                 <h3 class="mb-1 font-bold text-[#F7B538] text-lg">${item.title}</h3>
-                                <h4 class="font-semibold text-gray-700">${item.company}</h4>
+                                <h4 class="font-semibold text-gray-700">${companyHtml}</h4>
                                 <div class="timeline-item-content">
                                     <ul class="list-disc list-inside space-y-1 mt-2">
                                         ${detailsList}
@@ -468,4 +479,3 @@
 
 </body>
 </html>
- 
